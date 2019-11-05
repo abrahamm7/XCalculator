@@ -4,8 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XCalculator.MainPage">
-
+             x:Class="XCalculator.MainPage"
+             BackgroundColor="Black">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="plainbutton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Gold"/>
+                <Setter Property="Text" Value="White"/>
+                <Setter Property="BorderRadius" Value="0"/>
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+            <Style x:Key="sx" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Gainsboro"/>
+                <Setter Property="Text" Value="White"/>
+                <Setter Property="BorderRadius" Value="0"/>
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <StackLayout>
         <Grid x:Name="Grid1">
             <Grid.RowDefinitions>
@@ -24,26 +40,24 @@
             </Grid.ColumnDefinitions>
 
             <Label x:Name="resultado" TextColor="White" Text="0" FontSize="60" HorizontalTextAlignment="End" VerticalTextAlignment="End" Grid.ColumnSpan="4"/>
-            <Button Text="C" Grid.Row="1" Grid.Column="0" Style="{StaticResource plainbutton}" Clicked="onClear" />
-            <Button Text="+/-" Grid.Row="1" Grid.Column="1" Style="{StaticResource sx}" Clicked="onSelectOperator" />
-            <Button Text="%" Grid.Row="1" Grid.Column="2" Style="{StaticResource sx}" Clicked="onPer" />
-            <Button Text="√" Grid.Row="1" Grid.Column="3" Style="{StaticResource plainbutton}" Clicked="onSquare"/>
-            <Button Text="7" Grid.Row="2" Grid.Column="0" Style="{StaticResource sx}" Clicked="onSelectNumber" />
-            <Button Text="8" Grid.Row="2" Grid.Column="1" Style="{StaticResource sx}" Clicked="onSelectNumber" />
-            <Button Text="9" Grid.Row="2" Grid.Column="2" Style="{StaticResource sx}" Clicked="onSelectNumber"/>
-            <Button Text="+" Grid.Row="2" Grid.Column="3" Style="{StaticResource plainbutton}" Clicked="onSelectOperator"/>
-            <Button Text="4" Grid.Row="3" Grid.Column="0" Style="{StaticResource sx}" Clicked="onSelectNumber"/>
-            <Button Text="5" Grid.Row="3" Grid.Column="1" Style="{StaticResource sx}" Clicked="onSelectNumber"/>
-            <Button Text="6" Grid.Row="3" Grid.Column="2" Style="{StaticResource sx}" Clicked="onSelectNumber"/>
-            <Button Text="-" Grid.Row="3" Grid.Column="3" Style="{StaticResource plainbutton}" Clicked="onSelectOperator"/>
-            <Button Text="1" Grid.Row="4" Grid.Column="0" Style="{StaticResource sx}" Clicked="onSelectNumber"/>
-            <Button Text="2" Grid.Row="4" Grid.Column="1" Style="{StaticResource sx}" Clicked="onSelectNumber"/>
-            <Button Text="3" Grid.Row="4" Grid.Column="2" Style="{StaticResource sx}" Clicked="onSelectNumber"/>
-            <Button Text="X" Grid.Row="4" Grid.Column="3" Style="{StaticResource plainbutton}"  Clicked="onSelectOperator"/>
-            <Button Text="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource sx}" Clicked="onSelectNumber"/>
-            <Button Text="/" Grid.Row="5" Grid.Column="2" Style="{StaticResource plainbutton}" Clicked="onSelectOperator" />
+            <Button x:Name="Borrar" Text="C" Grid.Row="1" Grid.Column="3" Style="{StaticResource plainbutton}" Clicked="Borrar_Clicked" />
+            <Button Text="+/-" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource sx}" Clicked="Operacion" />
+            <Button Text="7" Grid.Row="2" Grid.Column="0" Style="{StaticResource sx}" Clicked="SelNumero" />
+            <Button Text="8" Grid.Row="2" Grid.Column="1" Style="{StaticResource sx}" Clicked="SelNumero" />
+            <Button Text="9" Grid.Row="2" Grid.Column="2" Style="{StaticResource sx}" Clicked="SelNumero"/>
+            <Button Text="+" Grid.Row="2" Grid.Column="3" Style="{StaticResource plainbutton}" Clicked="Operacion"/>
+            <Button Text="4" Grid.Row="3" Grid.Column="0" Style="{StaticResource sx}" Clicked="SelNumero"/>
+            <Button Text="5" Grid.Row="3" Grid.Column="1" Style="{StaticResource sx}" Clicked="SelNumero"/>
+            <Button Text="6" Grid.Row="3" Grid.Column="2" Style="{StaticResource sx}" Clicked="SelNumero"/>
+            <Button Text="-" Grid.Row="3" Grid.Column="3" Style="{StaticResource plainbutton}" Clicked="Operacion"/>
+            <Button Text="1" Grid.Row="4" Grid.Column="0" Style="{StaticResource sx}" Clicked="SelNumero"/>
+            <Button Text="2" Grid.Row="4" Grid.Column="1" Style="{StaticResource sx}" Clicked="SelNumero"/>
+            <Button Text="3" Grid.Row="4" Grid.Column="2" Style="{StaticResource sx}" Clicked="SelNumero"/>
+            <Button Text="X" Grid.Row="4" Grid.Column="3" Style="{StaticResource plainbutton}"  Clicked="Operacion"/>
+            <Button Text="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource sx}" Clicked="SelNumero"/>
+            <Button Text="/" Grid.Row="5" Grid.Column="2" Style="{StaticResource plainbutton}" Clicked="Operacion" />
             <Button Text="=" Grid.Row="5" Grid.Column="3" Style="{StaticResource plainbutton}"  Clicked="onCalculate"/>
-
+            <Button x:Name="History" Text="Historial" Grid.Row="6" Grid.ColumnSpan="4" Style="{StaticResource sx}" Clicked="History_Clicked"></Button>
         </Grid>
 
     </StackLayout>
