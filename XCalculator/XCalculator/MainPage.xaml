@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XCalculator.MainPage"
-             BackgroundColor="Black">
+             BackgroundColor="Black"
+             Title="Calculadora">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="plainbutton" TargetType="Button">
@@ -40,7 +41,7 @@
             </Grid.ColumnDefinitions>
 
             <Label x:Name="resultado" TextColor="White" Text="0" FontSize="60" HorizontalTextAlignment="End" VerticalTextAlignment="End" Grid.ColumnSpan="4"/>
-            <Button x:Name="Borrar" Text="C" Grid.Row="1" Grid.Column="3" Style="{StaticResource plainbutton}" Clicked="Borrar_Clicked" />
+            <Button Text="C" Grid.Row="1" Grid.Column="3" Style="{StaticResource plainbutton}" Clicked="Borrar" />
             <Button Text="+/-" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource sx}" Clicked="Operacion" />
             <Button Text="7" Grid.Row="2" Grid.Column="0" Style="{StaticResource sx}" Clicked="SelNumero" />
             <Button Text="8" Grid.Row="2" Grid.Column="1" Style="{StaticResource sx}" Clicked="SelNumero" />
@@ -56,8 +57,8 @@
             <Button Text="X" Grid.Row="4" Grid.Column="3" Style="{StaticResource plainbutton}"  Clicked="Operacion"/>
             <Button Text="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource sx}" Clicked="SelNumero"/>
             <Button Text="/" Grid.Row="5" Grid.Column="2" Style="{StaticResource plainbutton}" Clicked="Operacion" />
-            <Button Text="=" Grid.Row="5" Grid.Column="3" Style="{StaticResource plainbutton}"  Clicked="onCalculate"/>
-            <Button x:Name="History" Text="Historial" Grid.Row="6" Grid.ColumnSpan="4" Style="{StaticResource sx}" Clicked="History_Clicked"></Button>
+            <Button Text="=" Grid.Row="5" Grid.Column="3" Style="{StaticResource plainbutton}"  Clicked="Igual"/>
+            <Button x:Name="BtnHistory" Text="Historial" Grid.Row="6" Grid.ColumnSpan="4" Style="{StaticResource sx}" Clicked="BtnHistory_Clicked" ></Button>
         </Grid>
 
     </StackLayout>

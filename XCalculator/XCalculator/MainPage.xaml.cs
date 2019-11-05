@@ -19,21 +19,16 @@ namespace XCalculator
         public MainPage()
         {
             InitializeComponent();
-
+            Borrar(this, null);            
         }
 
-        private void History_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Borrar_Clicked(object sender, EventArgs e)
-        {
-
-        }
+        
         void Operacion(object sender, EventArgs e)
         {
-
+            contador = -2;
+            Button btn = (Button)sender;
+            string pressed = btn.Text;
+            operador = pressed;
         }
         void SelNumero(object sender, EventArgs e)
         {
@@ -64,5 +59,29 @@ namespace XCalculator
                 }
             }
         }
+        void Borrar(object sender, EventArgs e)
+        {
+            numero1 = 0;
+            numero2 = 0;
+            resultado.Text = "0";
+            contador = 1;
+        }
+
+        async private void BtnHistory_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new History());
+        }
+
+        void Igual(object sender, EventArgs e)
+        {
+            if (contador == 2)
+            {
+                var result = Operaciones.Calcular(numero1, numero2, operador);
+                this.resultado.Text = result.ToString();
+                numero1 = result;
+                contador = -1;
+            }
+        }
+
     }
 }
