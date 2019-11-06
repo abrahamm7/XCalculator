@@ -20,7 +20,6 @@ namespace XCalculator
         string operador;
         double numero1, numero2;
         public SQLiteConnection conn;
-        public Registration entryoperations;
         Historial historial = new Historial();
         public MainPage()
         {
@@ -36,7 +35,7 @@ namespace XCalculator
             string pressed = btn.Text;
             operador = pressed;
             historial.Operador = operador;
-        }
+        } //Seleccion de operacion
         void SelNumero(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -68,14 +67,14 @@ namespace XCalculator
                     historial.SecondNumber = numero2;
                 }
             }
-        }
+        } //Seleccion de Numero
         void Borrar(object sender, EventArgs e)
         {
             numero1 = 0;
             numero2 = 0;
             resultado.Text = "0";
             contador = 1;
-        }
+        } 
         async private void BtnHistory_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new History());
@@ -106,7 +105,7 @@ namespace XCalculator
 
             }
 
-        }
+        } //Resultado
 
     }
 }
