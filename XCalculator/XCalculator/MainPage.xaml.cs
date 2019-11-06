@@ -88,12 +88,11 @@ namespace XCalculator
                 this.resultado.Text = result.ToString();
                 numero1 = result;
                 contador = -1;
-              
 
                 // historial.FirstNumber = numero1;
 
                 historial.total = result;
-                historial.Fecha = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
+                historial.Fecha = DateTime.Now;
 
                 int x = 0;
                 try

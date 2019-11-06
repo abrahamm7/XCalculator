@@ -10,7 +10,7 @@ namespace XCalculator
         public double FirstNumber { get; set; }
         public double SecondNumber { get; set; }
         public string Operador { get; set; }
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public double total { get; set; }
 
         public string NewProperty
