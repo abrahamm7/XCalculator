@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XCalculator;
@@ -23,7 +22,6 @@ namespace XCalculator
             conn = DependencyService.Get<Isqlite>().GetConnection();
             conn.CreateTable<Historial>();
             ShowFunction();
-
         }
 
         public void ShowFunction(){

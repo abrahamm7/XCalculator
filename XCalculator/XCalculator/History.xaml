@@ -13,11 +13,10 @@
                 <ListView x:Name="myListView" HasUnevenRows="True" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding FirstNumber}" Detail="{Binding SecondNumber}"/>
+                            <TextCell Text="{Binding NewProperty}" TextColor="White" Detail="{Binding Fecha}" DetailColor="WhiteSmoke"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

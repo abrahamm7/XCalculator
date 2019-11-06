@@ -21,6 +21,7 @@ namespace XCalculator
         double numero1, numero2;
         public SQLiteConnection conn;
         public Registration entryoperations;
+        Historial historial = new Historial();
         public MainPage()
         {
             InitializeComponent();
@@ -28,13 +29,13 @@ namespace XCalculator
             conn = DependencyService.Get<Isqlite>().GetConnection();
             conn.CreateTable<Historial>();
         }
-        
         void Operacion(object sender, EventArgs e)
         {
             contador = -2;
             Button btn = (Button)sender;
             string pressed = btn.Text;
             operador = pressed;
+            historial.Operador = operador;
         }
         void SelNumero(object sender, EventArgs e)
         {
@@ -58,10 +59,13 @@ namespace XCalculator
                 if (contador == 1)
                 {
                     numero1 = numero;
+                    historial.FirstNumber = numero1;
+
                 }
                 else
                 {
                     numero2 = numero;
+                    historial.SecondNumber = numero2;
                 }
             }
         }
@@ -84,11 +88,12 @@ namespace XCalculator
                 this.resultado.Text = result.ToString();
                 numero1 = result;
                 contador = -1;
+              
 
-                Historial historial = new Historial();
-                historial.FirstNumber = numero1;
-                historial.SecondNumber = numero2;
+                // historial.FirstNumber = numero1;
+
                 historial.total = result;
+                historial.Fecha = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
 
                 int x = 0;
                 try

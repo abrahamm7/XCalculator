@@ -10,15 +10,15 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="plainbutton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="Gold"/>
+                <Setter Property="BackgroundColor" Value="LightBlue"/>
                 <Setter Property="Text" Value="White"/>
-                <Setter Property="BorderRadius" Value="0"/>
-                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="BorderRadius" Value="15"/>
+                <Setter Property="FontSize" Value="Body"/>
             </Style>
             <Style x:Key="sx" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="Gainsboro"/>
+                <Setter Property="BackgroundColor" Value="WhiteSmoke"/>
                 <Setter Property="Text" Value="White"/>
-                <Setter Property="BorderRadius" Value="0"/>
+                <Setter Property="BorderRadius" Value="15"/>
                 <Setter Property="FontSize" Value="Large"/>
             </Style>
         </ResourceDictionary>
@@ -41,8 +41,7 @@
             </Grid.ColumnDefinitions>
 
             <Label x:Name="resultado" TextColor="White" Text="0" FontSize="60" HorizontalTextAlignment="End" VerticalTextAlignment="End" Grid.ColumnSpan="4"/>
-            <Button Text="C" Grid.Row="1" Grid.Column="3" Style="{StaticResource plainbutton}" Clicked="Borrar" />
-            <Button Text="+/-" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource sx}" Clicked="Operacion" />
+            <Button Text="C" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource plainbutton}" Clicked="Borrar" />
             <Button Text="7" Grid.Row="2" Grid.Column="0" Style="{StaticResource sx}" Clicked="SelNumero" />
             <Button Text="8" Grid.Row="2" Grid.Column="1" Style="{StaticResource sx}" Clicked="SelNumero" />
             <Button Text="9" Grid.Row="2" Grid.Column="2" Style="{StaticResource sx}" Clicked="SelNumero"/>
