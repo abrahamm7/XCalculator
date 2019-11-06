@@ -21,7 +21,6 @@ namespace XCalculator
             InitializeComponent();
             Borrar(this, null);            
         }
-
         
         void Operacion(object sender, EventArgs e)
         {
@@ -66,12 +65,10 @@ namespace XCalculator
             resultado.Text = "0";
             contador = 1;
         }
-
         async private void BtnHistory_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new History());
         }
-
         void Igual(object sender, EventArgs e)
         {
             if (contador == 2)
