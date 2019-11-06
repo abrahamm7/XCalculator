@@ -8,20 +8,17 @@
              BackgroundColor="Black"
              Title="Historial">
     <ContentPage.Content>
-        <StackLayout Margin="20,35,20,20">
-            <ListView>
-                <ListView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Baboon</x:String>
-                        <x:String>Capuchin Monkey</x:String>
-                        <x:String>Blue Monkey</x:String>
-                        <x:String>Squirrel Monkey</x:String>
-                        <x:String>Golden Lion Tamarin</x:String>
-                        <x:String>Howler Monkey</x:String>
-                        <x:String>Japanese Macaque</x:String>
-                    </x:Array>
-                </ListView.ItemsSource>
-            </ListView>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ListView x:Name="myListView" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding FirstNumber}" Detail="{Binding SecondNumber}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+using SimpleInjector;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,10 +19,14 @@ namespace XCalculator
         int contador = 1;
         string operador;
         double numero1, numero2;
+        public SQLiteConnection conn;
+        public Registration entryoperations;
         public MainPage()
         {
             InitializeComponent();
-            Borrar(this, null);            
+            Borrar(this, null);
+            conn = DependencyService.Get<Isqlite>().GetConnection();
+            conn.CreateTable<Historial>();
         }
         
         void Operacion(object sender, EventArgs e)
@@ -77,7 +84,24 @@ namespace XCalculator
                 this.resultado.Text = result.ToString();
                 numero1 = result;
                 contador = -1;
+
+                Historial historial = new Historial();
+                historial.FirstNumber = numero1;
+                historial.SecondNumber = numero2;
+                historial.total = result;
+
+                int x = 0;
+                try
+                {
+                    x = conn.Insert(historial);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
             }
+
         }
 
     }
