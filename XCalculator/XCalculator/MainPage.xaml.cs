@@ -86,10 +86,7 @@ namespace XCalculator
                 var result = Operaciones.Calcular(numero1, numero2, operador);
                 this.resultado.Text = result.ToString();
                 numero1 = result;
-                contador = -1;
-
-                // historial.FirstNumber = numero1;
-
+                contador = -1;              
                 historial.total = result;
                 historial.Fecha = DateTime.Now;
 
